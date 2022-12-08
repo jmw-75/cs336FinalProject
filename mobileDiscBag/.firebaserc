@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "discdex-6f0e4": {
+      "hosting": {
+        "mobileDiscBag": [
+          "discdex"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "discdex-6f0e4"
+  }
+}
