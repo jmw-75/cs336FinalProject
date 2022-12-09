@@ -4,7 +4,7 @@
 
 export const environment = {
   firebase: {
-    projectId: 'discdex',
+    projectId: 'discdex-6f0e4',
     appId: '1:171973094876:web:e65efd3253b5848349b319',
     storageBucket: 'discdex-6f0e4.appspot.com',
     locationId: 'us-central',
