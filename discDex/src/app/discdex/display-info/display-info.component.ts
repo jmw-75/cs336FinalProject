@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 interface DiscDex {
   name: string;
@@ -14,7 +14,7 @@ interface DiscDex {
   styleUrls: ['./display-info.component.scss']
 })
 export class DisplayInfoComponent implements OnInit {
-
+  public disc$?: DiscDex[];
   public name = '';
   public flightNumbers = '';
   public desc = '';

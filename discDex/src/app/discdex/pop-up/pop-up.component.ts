@@ -1,6 +1,6 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, OnInit, Inject, Input } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import {MatDialog, MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import { MatDialog, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { DisplayInfoComponent } from '../display-info/display-info.component';
 
 interface DiscDex {
@@ -17,21 +17,15 @@ interface DiscDex {
 })
 export class PopUpComponent implements OnInit {
 
-
+  //@Input() name!: string;
+  public disc$?: DiscDex[];
   public name = '';
   public flightNumbers = '';
   public desc = '';
   public brand = '';
 
   constructor(private db: AngularFirestore, public dialog: MatDialog) {
-    db.doc<DiscDex>('/disc/newDisc').valueChanges().subscribe(result => {
-      if (result) {
-        this.name = result.name;
-        this.flightNumbers = result.flightNumbers;
-        this.desc = result.desc;
-        this.brand = result.brand;
-      }
-    });
+    this.db.collection<DiscDex>('disc', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
   }
 
   openDialog(): void {
