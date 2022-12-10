@@ -9,17 +9,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { DiscdexComponent } from './discdex/discdex.component';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
+import { PopUpComponent } from './discdex/pop-up/pop-up.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DisplayInfoComponent } from './discdex/display-info/display-info.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     DiscdexComponent,
     AboutComponent,
-    HomeComponent
+    HomeComponent,
+    PopUpComponent,
+    DisplayInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,9 @@ import { HomeComponent } from './home/home.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
