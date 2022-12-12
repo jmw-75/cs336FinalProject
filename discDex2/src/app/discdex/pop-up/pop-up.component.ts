@@ -29,7 +29,7 @@ export class PopUpComponent implements OnInit {
 
   constructor(private db: AngularFirestore,
               public dialog: MatDialog) {
-    this.db.collection<DiscDex>('empty', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
+    this.db.collection<DiscDex>('disc', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
   }
 
   openDialog(name: string, speed: string, glide: string, turn: string, fade: string, brand: string, stability: string, category: string, pic:string): void {
