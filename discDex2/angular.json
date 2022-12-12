@@ -109,8 +109,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "hw10:build:production",
-            "firebaseProject": "discdex-c96be",
-            "firebaseHostingSite": "disc-dex"
+            "firebaseProject": "disc-dex-1f2b2",
+            "firebaseHostingSite": "disc-dex-1f2b2"
           }
         }
       }

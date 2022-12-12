@@ -6,9 +6,16 @@
           "disc-dex"
         ]
       }
+    },
+    "disc-dex-1f2b2": {
+      "hosting": {
+        "hw10": [
+          "disc-dex-1f2b2"
+        ]
+      }
     }
   },
   "projects": {
-    "default": "discdex-c96be"
+    "default": "disc-dex-1f2b2"
   }
 }
