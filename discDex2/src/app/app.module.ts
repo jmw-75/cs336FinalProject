@@ -40,8 +40,6 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     AppRoutingModule,
     NgbModule,
     MatDialogModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
