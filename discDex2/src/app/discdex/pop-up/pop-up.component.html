@@ -2,9 +2,28 @@
       src="https://i5.walmartimages.com/asr/b6da7080-5db5-4af1-a8b9-283da4659968_1.66bd39e1db50f894735bc3e57ab4aeaa.png"
       alt="Avatar"
     /> -->
-
-<div *ngFor="let d of disc$">
-    <button (click)="openDialog(d.name, d.speed, d.glide, d.turn, d.fade, d.brand, d.stability, d.category, d.pic)">
-        {{d.name}}
+<html>
+<head> </head>
+<body>
+  <span *ngFor="let d of disc$">
+    <button
+      class="btn fourth"
+      (click)="
+        openDialog(
+          d.name,
+          d.speed,
+          d.glide,
+          d.turn,
+          d.fade,
+          d.brand,
+          d.stability,
+          d.category,
+          d.pic
+        )
+      "
+    >
+      {{ d.name }}
     </button>
-</div>
+  </span>
+</body>
+</html>
