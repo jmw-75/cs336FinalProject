@@ -4,7 +4,7 @@
     /> -->
 
 <div *ngFor="let d of disc$">
-    <button (click)="openDialog()">
+    <button (click)="openDialog(d.name, d.speed, d.glide, d.turn, d.fade, d.brand, d.stability, d.category)">
         {{d.name}}
     </button>
 </div>

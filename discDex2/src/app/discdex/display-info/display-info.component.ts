@@ -1,12 +1,16 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 interface DiscDex {
   name: string;
-  flightNumbers: string;
+  speed: string;
+  glide: string;
+  turn: string;
+  fade: string;
   brand: string;
-  desc: string;
+  stability: string;
+  category: string;
 }
 @Component({
   selector: 'app-display-info',
@@ -14,22 +18,31 @@ interface DiscDex {
   styleUrls: ['./display-info.component.scss']
 })
 export class DisplayInfoComponent implements OnInit {
-  public disc$?: DiscDex[];
   public name = '';
-  public flightNumbers = '';
-  public desc = '';
+  public speed = '';
+  public glide = '';
+  public turn = '';
+  public fade = '';
   public brand = '';
+  public stability = '';
+  public category = '';
 
-  constructor(private db: AngularFirestore, public dialog: MatDialog) {
-    db.doc<DiscDex>('/test/testdisc').valueChanges().subscribe(result => {
-      if (result) {
-        this.name = result.name;
-        this.flightNumbers = result.flightNumbers;
-        this.desc = result.desc;
-        this.brand = result.brand;
-      }
-    });
+  constructor(private db: AngularFirestore,
+    public dialogRef: MatDialogRef<DiscDex>,
+    @Inject(MAT_DIALOG_DATA) public data: any) {
+      this.name = data.name;
+      this.speed = data.speed;
+      this.glide = data.glide;
+      this.turn = data.turn;
+      this.fade = data.fade;
+      this.brand = data.brand;
+      this.stability = data.stability;
+      this.category = data.category;
+
+      // console.log(this.data);
   }
+
+
 
   ngOnInit(): void {
   }

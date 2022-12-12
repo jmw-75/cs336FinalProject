@@ -17,6 +17,8 @@ import { HomeComponent } from './home/home.component';
 import { PopUpComponent } from './discdex/pop-up/pop-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DisplayInfoComponent } from './discdex/display-info/display-info.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
