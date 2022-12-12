@@ -11,6 +11,7 @@ interface DiscDex {
   brand: string;
   stability: string;
   category: string;
+  pic: string;
 }
 @Component({
   selector: 'app-display-info',
@@ -26,6 +27,7 @@ export class DisplayInfoComponent implements OnInit {
   public brand = '';
   public stability = '';
   public category = '';
+  public pic = '';
 
   constructor(private db: AngularFirestore,
     public dialogRef: MatDialogRef<DiscDex>,
@@ -38,11 +40,10 @@ export class DisplayInfoComponent implements OnInit {
       this.brand = data.brand;
       this.stability = data.stability;
       this.category = data.category;
+      this.pic = data.pic;
 
       // console.log(this.data);
   }
-
-
 
   ngOnInit(): void {
   }

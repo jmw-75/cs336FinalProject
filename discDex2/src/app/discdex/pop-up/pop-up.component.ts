@@ -12,6 +12,7 @@ interface DiscDex {
   brand: string;
   stability: string;
   category: string;
+  pic: string;
 }
 
 @Component({
@@ -23,12 +24,15 @@ export class PopUpComponent implements OnInit {
 
   public disc$?: DiscDex[];
 
+  // https://stackoverflow.com/questions/47270324/nullinjectorerror-no-provider-for-matdialogref
+  // https://stackoverflow.com/questions/60653753/share-component-data-to-angular-material-dialog
+
   constructor(private db: AngularFirestore,
               public dialog: MatDialog) {
     this.db.collection<DiscDex>('test', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
   }
 
-  openDialog(name: string, speed: string, glide: string, turn: string, fade: string, brand: string, stability: string, category: string): void {
+  openDialog(name: string, speed: string, glide: string, turn: string, fade: string, brand: string, stability: string, category: string, pic:string): void {
     const dialogRef = this.dialog.open(DisplayInfoComponent, {
       data: {
         name: name,
@@ -38,7 +42,8 @@ export class PopUpComponent implements OnInit {
         fade: fade,
         brand: brand,
         stability: stability,
-        category: category
+        category: category,
+        pic: pic
       }
     });
 
