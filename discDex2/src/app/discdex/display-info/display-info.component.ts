@@ -21,7 +21,7 @@ export class DisplayInfoComponent implements OnInit {
   public brand = '';
 
   constructor(private db: AngularFirestore, public dialog: MatDialog) {
-    db.doc<DiscDex>('/disc/newDisc').valueChanges().subscribe(result => {
+    db.doc<DiscDex>('/test/testdisc').valueChanges().subscribe(result => {
       if (result) {
         this.name = result.name;
         this.flightNumbers = result.flightNumbers;

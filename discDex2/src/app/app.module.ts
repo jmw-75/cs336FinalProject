@@ -37,7 +37,7 @@ import { DisplayInfoComponent } from './discdex/display-info/display-info.compon
     MatButtonModule,
     AppRoutingModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
