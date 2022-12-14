@@ -6,7 +6,7 @@ import { AngularFirestore } from '@angular/fire/compat/firestore';
   styleUrls: ['./discdex.component.scss']
 })
 export class DiscdexComponent implements OnInit {
-
+  search: String = "";
   constructor() { }
 
   ngOnInit(): void {
