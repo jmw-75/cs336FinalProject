@@ -3,12 +3,17 @@
       alt="Avatar"
     /> -->
 <html>
-<head> </head>
+
+<head>
+</head>
+
 <body>
-  <span *ngFor="let d of disc$">
-    <button
-      class="btn fourth"
-      (click)="
+  <div class="search-hero">
+    <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+      placeholder="&#61442; Start searching for Discs!!">
+  </div>
+  <span *ngFor="let d of disc$ | filter:searchText">
+    <button class="btn fourth" (click)="
         openDialog(
           d.name,
           d.speed,
@@ -20,10 +25,10 @@
           d.category,
           d.pic
         )
-      "
-    >
+      ">
       {{ d.name }}
     </button>
   </span>
 </body>
+
 </html>

@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { AppRoutingModule } from './app-routing.module';
 import { DiscdexComponent } from './discdex/discdex.component';
 import { AboutComponent } from './about/about.component';
@@ -17,8 +19,8 @@ import { HomeComponent } from './home/home.component';
 import { PopUpComponent } from './discdex/pop-up/pop-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DisplayInfoComponent } from './discdex/display-info/display-info.component';
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { FormsModule } from '@angular/forms';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,10 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     AppRoutingModule,
     NgbModule,
     MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
