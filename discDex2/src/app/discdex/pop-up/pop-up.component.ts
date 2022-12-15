@@ -24,14 +24,30 @@ export class PopUpComponent implements OnInit {
 
   public disc$?: DiscDex[];
   public searchText: any;
-
+  public dropText: any;
+  selectedValue!: string;
 
   // https://stackoverflow.com/questions/47270324/nullinjectorerror-no-provider-for-matdialogref
   // https://stackoverflow.com/questions/60653753/share-component-data-to-angular-material-dialog
 
   constructor(private db: AngularFirestore,
     public dialog: MatDialog) {
-    this.db.collection<DiscDex>('test', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
+      this.db.collection<DiscDex>('test', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
+  }
+
+  onSelected(value: string): void {
+    this.selectedValue = value;
+
+    if (this.selectedValue === "Brand"){
+      this.db.collection<DiscDex>('test', ref => ref.orderBy("brand")).valueChanges().subscribe(res => this.disc$ = res);
+      console.log(this.selectedValue);
+    } else if (this.selectedValue === "Category"){
+      this.db.collection<DiscDex>('test', ref => ref.orderBy("category")).valueChanges().subscribe(res => this.disc$ = res);
+      console.log(this.selectedValue);
+    } else {
+      this.db.collection<DiscDex>('test', ref => ref.orderBy("name")).valueChanges().subscribe(res => this.disc$ = res);
+      console.log(this.selectedValue);
+    }
   }
 
   openDialog(name: string, speed: string, glide: string, turn: string, fade: string, brand: string, stability: string, category: string, pic: string): void {

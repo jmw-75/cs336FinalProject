@@ -46,7 +46,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MatFormFieldModule,
     MatIconModule,
     FormsModule,
-    Ng2SearchPipeModule,
+    Ng2SearchPipeModule, //npm install ng2-search-filter
     MatCardModule
   ],
   providers: [],
