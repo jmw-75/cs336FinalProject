@@ -1,4 +1,34 @@
+.about-section {
+    padding: 50px;
+    text-align: center;
+    background-color: #474e5d;
+    color: #ffffff;
+}
 
+.form-control {
+    max-width: 100%;
+    position: relative;
+}
+
+.col {
+    width: 140px;
+    position: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border: 1px solid #111;
+    border-radius: 3px;
+    overflow: hidden;
+    background: #ffffff;
+}
+
+.col select {
+    background: transparent;
+    width: 140px;
+    height: 35px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+}
 
 body {
     display: -webkit-box;

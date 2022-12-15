@@ -4,14 +4,28 @@
     /> -->
 <html>
 
-<head>
-</head>
+<header class="about-section">
 
-<body>
+  <h1>Disc Dex</h1>
+
   <div class="search-hero">
     <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
       placeholder="&#61442; Start searching for Discs!!">
   </div>
+
+  <div class="col">
+    <select #dropText (change)="onSelected(dropText.value)"> <!--[(ngModel)]="dropText"  & | filter:dropText"-->
+     <option default>Filter</option>
+     <option>Name</option>
+     <option>Brand</option>
+     <option>Category</option>
+   </select>
+  </div>
+
+</header>
+
+<body>
+
   <span *ngFor="let d of disc$ | filter:searchText">
     <button class="btn fourth" (click)="
         openDialog(
