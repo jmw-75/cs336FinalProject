@@ -32,20 +32,20 @@ export class PopUpComponent implements OnInit {
 
   constructor(private db: AngularFirestore,
     public dialog: MatDialog) {
-      this.db.collection<DiscDex>('test', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
+      this.db.collection<DiscDex>('disc', ref => ref.orderBy('name')).valueChanges().subscribe(res => this.disc$ = res);
   }
 
   onSelected(value: string): void {
     this.selectedValue = value;
 
     if (this.selectedValue === "Brand"){
-      this.db.collection<DiscDex>('test', ref => ref.orderBy("brand")).valueChanges().subscribe(res => this.disc$ = res);
+      this.db.collection<DiscDex>('disc', ref => ref.orderBy("brand")).valueChanges().subscribe(res => this.disc$ = res);
       console.log(this.selectedValue);
     } else if (this.selectedValue === "Category"){
-      this.db.collection<DiscDex>('test', ref => ref.orderBy("category")).valueChanges().subscribe(res => this.disc$ = res);
+      this.db.collection<DiscDex>('disc', ref => ref.orderBy("category")).valueChanges().subscribe(res => this.disc$ = res);
       console.log(this.selectedValue);
     } else {
-      this.db.collection<DiscDex>('test', ref => ref.orderBy("name")).valueChanges().subscribe(res => this.disc$ = res);
+      this.db.collection<DiscDex>('disc', ref => ref.orderBy("name")).valueChanges().subscribe(res => this.disc$ = res);
       console.log(this.selectedValue);
     }
   }
